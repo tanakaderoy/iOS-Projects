@@ -29,6 +29,9 @@ Swiping a task in the list should delete the item.
 
 The list should use a custom cell view.  All of the information about the task must be displayed in the cell in some manner.  Be creative in your design.
 
+## Persistance
+Persist the state of data between runs.  When you close the app, save the data to a file, when you load the app, read the data back from the file.
+
 ## Grading Rubric
 25 points each:
 * Task Model Class
