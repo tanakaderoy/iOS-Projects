@@ -1,8 +1,8 @@
 # Assignment 4
 
-Assigned: 2/14/2019
-Due: 2/28/2019
-Points: 200
+Assigned: 2/14/2019 
+Due: 2/28/2019 
+Points: 200 
 
 ## Purpose
 Create a UIView based iOS app for data entry and display using standard iOS controls and navigation elements.
