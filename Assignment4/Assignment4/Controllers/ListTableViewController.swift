@@ -36,14 +36,22 @@ class ListTableViewController: UITableViewController {
             cell.labelDescription.text = todoItem.description
             cell.labelEmoji.text = todoItem.emoji
             cell.labelPriority.text = "Priority: \(todoItem.priority)"
-            cell.labelState.text = "\(todoItem.state)"
+            cell.labelState.text = "Completed: \(todoItem.state)"
         }else{
             
         }
        
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            TodoItemManager.instance.todoItems.remove(at: indexPath.row)
+        }
+        tableView.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.

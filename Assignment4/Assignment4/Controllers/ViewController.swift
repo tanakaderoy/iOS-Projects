@@ -13,6 +13,7 @@ class ViewController: UIViewController {
    
     
     
+    @IBOutlet weak var descriptionInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
         
         //code tosave or add new
         // navigate bage
+        if descriptionInput.text != "" {
+            TodoItemManager.instance.todoItems.append(TodoItem(description: descriptionInput.text!, emoji: "😃", priority: Priority.high,  state: true))
+            descriptionInput.text = ""
+        }
         
         self.navigationController?.popViewController(animated: true)
     }
