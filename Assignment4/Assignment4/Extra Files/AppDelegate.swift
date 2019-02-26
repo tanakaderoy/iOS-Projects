@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Assignment4
+//  NavigationDemo
 //
 //  Created by tanaka on 2/19/19.
 //  Copyright © 2019 tanaka. All rights reserved.

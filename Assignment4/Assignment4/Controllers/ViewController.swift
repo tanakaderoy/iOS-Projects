@@ -10,11 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        //if let numberValue = numberValue {
+            
+        //}
+            
     }
 
-
+    @IBAction func saveButtonTouched(_ sender: UIBarButtonItem) {
+        
+        //code tosave or add new
+        // navigate bage
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
