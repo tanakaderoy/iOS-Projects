@@ -16,12 +16,19 @@ class TodoItemManager {
         return todoItems.count
     }
     
-    private init() {
+    private init() {/*
+        let todoTaskOne = todoCodable(description: "Play Fifa", emoji: "emoji", priority: .low, state: .closed)
+        let adapter = TodoFileDataAdapter(fileName: "todoFile.json")
+        adapter.saveTask(todoTaskOne)
+        if let taskTwo = adapter.loadTask() {
+            print("\(taskTwo.description)")
+            
+        }*/
         //json file
-        todoItems.append(TodoItem(description: "Finish HW", emoji: "😃", priority: Priority.high,  state: true))
-        todoItems.append(TodoItem(description: "Watch Netflix", emoji: "😃", priority: Priority.high,state: true))
-        todoItems.append(TodoItem(description: "Finish HW", emoji: "😃", priority: Priority.high,  state: true))
-        todoItems.append(TodoItem(description: "SLeep", emoji: "😃", priority: Priority.high,   state: true))
+        todoItems.append(TodoItem(description: "Finish HW", emoji: "😃", priority: Priority.high,  state: State.open))
+        todoItems.append(TodoItem(description: "Watch Netflix", emoji: "😃", priority: Priority.high,state: State.open))
+        todoItems.append(TodoItem(description: "Finish HW", emoji: "😃", priority: Priority.high,  state: State.open))
+        todoItems.append(TodoItem(description: "SLeep", emoji: "😃", priority: Priority.high,   state: State.open))
     }
     
     func todoItemAtIndex(_ index: Int) -> TodoItem? {

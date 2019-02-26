@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var descriptionInput: UITextField!
     
+    @IBOutlet weak var stateSegmentControl: UISegmentedControl!
+    @IBOutlet weak var prioritySegmentControl: UISegmentedControl!
+    @IBOutlet weak var emojiInput: UITextField!
+    var priority = ""
+    var state = ""
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,12 +30,34 @@ class ViewController: UIViewController {
             
     }
 
+    @IBAction func prioritySegmentChanged(_ sender: Any) {
+        switch prioritySegmentControl.selectedSegmentIndex{
+        case 0:
+            priority = "High"
+        case 1:
+            priority = "Medium"
+        case 2:
+            priority = "Low"
+        default:
+            break
+        }
+    }
+    @IBAction func stateSegmentChanged(_ sender: Any) {
+        switch stateSegmentControl.selectedSegmentIndex {
+        case 0:
+            state = "Open"
+        case 1:
+            state = "Closed"
+        default:
+            break
+        }
+    }
     @IBAction func saveButtonTouched(_ sender: UIBarButtonItem) {
         
         //code tosave or add new
         // navigate bage
         if descriptionInput.text != "" {
-            TodoItemManager.instance.todoItems.append(TodoItem(description: descriptionInput.text!, emoji: "😃", priority: Priority.high,  state: true))
+            TodoItemManager.instance.todoItems.append(TodoItem(description: descriptionInput.text!, emoji: emojiInput.text!, priority: Priority(rawValue: priority)!,  state: State(rawValue: state)!))
             descriptionInput.text = ""
         }
         

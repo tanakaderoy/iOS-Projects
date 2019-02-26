@@ -33,10 +33,10 @@ class ListTableViewController: UITableViewController {
             preconditionFailure("Failed find cell. Check ids")
         }
         if let todoItem = TodoItemManager.instance.todoItemAtIndex(indexPath.row){
-            cell.labelDescription.text = todoItem.description
-            cell.labelEmoji.text = todoItem.emoji
+            cell.labelDescription.text = "Description: \(todoItem.description)"
+            cell.labelEmoji.text = "Emoji: \(todoItem.emoji)"
             cell.labelPriority.text = "Priority: \(todoItem.priority)"
-            cell.labelState.text = "Completed: \(todoItem.state)"
+            cell.labelState.text = "Status: \(todoItem.state)"
         }else{
             
         }
@@ -101,6 +101,14 @@ class ListTableViewController: UITableViewController {
             if let cell = sender as? UITableViewCell {
                 if let indexPath = tableView.indexPath(for: cell) {
                     //vc.numberValue = "\(indexPath.row)"
+                   /* if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                        TodoItemManager.instance.todoItems[selectedIndexPath.row] = TodoItem(description: (TodoItemManager.instance.todoItemAtIndex(selectedIndexPath.row)?.description)!, emoji: "s", priority: Priority.high, state: false)
+                        tableView.reloadData()
+                    }else{
+                        
+                    }*/
+                    
+                    
                     
                 }
                 
@@ -109,6 +117,7 @@ class ListTableViewController: UITableViewController {
             
             if let _ = sender as? UIBarButtonItem {
                 //vc.numberValue = "-1"
+                
             }
             
         }

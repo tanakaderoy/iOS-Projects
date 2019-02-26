@@ -13,13 +13,17 @@ public enum Priority : String {
     case medium = "Medium"
     case low = "Low"
 }
+public enum State: String {
+    case open = "Open"
+    case closed = "Closed"
+}
 class TodoItem {
     var description: String
     var emoji: String
     var priority: Priority
     //var dueDate: UIDatePicker?
-    var state: Bool
-    init(description: String, emoji: String, priority: Priority, state: Bool) {
+    var state: State
+    init(description: String, emoji: String, priority: Priority, state: State) {
         self.description = description
         self.emoji = emoji
         self.priority = priority
