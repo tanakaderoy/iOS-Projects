@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F5302BE2225EC5300709315 /* todoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5302BD2225EC5300709315 /* todoJSON.swift */; };
+		3F5302BE2225EC5300709315 /* todoFileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5302BD2225EC5300709315 /* todoFileAdapter.swift */; };
 		3FAF72D22224979300821C08 /* todoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF72D12224979300821C08 /* todoItem.swift */; };
 		3FAF72D422249A2B00821C08 /* todoItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF72D322249A2B00821C08 /* todoItemManager.swift */; };
 		3FAF72D622249C1700821C08 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF72D522249C1700821C08 /* Util.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F5302BD2225EC5300709315 /* todoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoJSON.swift; sourceTree = "<group>"; };
+		3F5302BD2225EC5300709315 /* todoFileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoFileAdapter.swift; sourceTree = "<group>"; };
 		3FAF72D12224979300821C08 /* todoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoItem.swift; sourceTree = "<group>"; };
 		3FAF72D322249A2B00821C08 /* todoItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoItemManager.swift; sourceTree = "<group>"; };
 		3FAF72D522249C1700821C08 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			children = (
 				3FAF72D12224979300821C08 /* todoItem.swift */,
 				3FAF72D322249A2B00821C08 /* todoItemManager.swift */,
-				3F5302BD2225EC5300709315 /* todoJSON.swift */,
+				3F5302BD2225EC5300709315 /* todoFileAdapter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8723C79D221C6B6F004AF63F /* ListTableViewController.swift in Sources */,
-				3F5302BE2225EC5300709315 /* todoJSON.swift in Sources */,
+				3F5302BE2225EC5300709315 /* todoFileAdapter.swift in Sources */,
 				3FAF72D622249C1700821C08 /* Util.swift in Sources */,
 				8723C78D221C690A004AF63F /* ViewController.swift in Sources */,
 				3FAF72D22224979300821C08 /* todoItem.swift in Sources */,

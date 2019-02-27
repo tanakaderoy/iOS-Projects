@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class TodoItemManager {
     static var instance = TodoItemManager()
+    let fileName = "todo.json"
     var todoItems = [TodoItem]()
     
     var count: Int {
@@ -36,6 +37,20 @@ class TodoItemManager {
             return todoItems[index]
         }else{
             return nil
+        }
+    }
+    
+    func save() {
+        let adapter = TodoFileDataAdapter(fileName: fileName)
+        adapter.saveTask(todoItems)
+    }
+    
+    func load() {
+        let adapter = TodoFileDataAdapter(fileName: fileName)
+        if let todoItems = adapter.loadTask() {
+            self.todoItems = todoItems
+            
+            
         }
     }
     

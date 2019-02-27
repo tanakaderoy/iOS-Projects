@@ -17,17 +17,17 @@ public enum State: String {
     case open = "Open"
     case closed = "Closed"
 }
-class TodoItem {
+class TodoItem: Codable {
     var description: String
     var emoji: String
-    var priority: Priority
+    var priority: Priority.RawValue
     //var dueDate: UIDatePicker?
-    var state: State
+    var state: State.RawValue
     init(description: String, emoji: String, priority: Priority, state: State) {
         self.description = description
         self.emoji = emoji
-        self.priority = priority
+        self.priority = priority.rawValue
         //self.dueDate = dueDate
-        self.state = state
+        self.state = state.rawValue
     }
 }

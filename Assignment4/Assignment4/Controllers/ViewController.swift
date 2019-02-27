@@ -20,10 +20,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var emojiInput: UITextField!
     var priority = ""
     var state = ""
+    var todoItem: TodoItem?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
+        if let todoItem = todoItem {
+            descriptionInput.text = todoItem.description
+        }else {
+            TodoItemManager.instance.todoItems.append(todoItem!)
+        }
         //if let numberValue = numberValue {
             
         //}
@@ -56,10 +62,12 @@ class ViewController: UIViewController {
         
         //code tosave or add new
         // navigate bage
-        if descriptionInput.text != "" {
+        /*if descriptionInput.text != "" {
             TodoItemManager.instance.todoItems.append(TodoItem(description: descriptionInput.text!, emoji: emojiInput.text!, priority: Priority(rawValue: priority)!,  state: State(rawValue: state)!))
             descriptionInput.text = ""
-        }
+            
+        }*/
+        
         
         self.navigationController?.popViewController(animated: true)
     }

@@ -98,8 +98,9 @@ class ListTableViewController: UITableViewController {
         
         if let vc = segue.destination as? ViewController {
         
-            if let cell = sender as? UITableViewCell {
+            if let cell = sender as? ItemTableViewCell {
                 if let indexPath = tableView.indexPath(for: cell) {
+                    vc.todoItem = TodoItemManager.instance.todoItemAtIndex(indexPath.row)
                     //vc.numberValue = "\(indexPath.row)"
                    /* if let selectedIndexPath = tableView.indexPathForSelectedRow {
                         TodoItemManager.instance.todoItems[selectedIndexPath.row] = TodoItem(description: (TodoItemManager.instance.todoItemAtIndex(selectedIndexPath.row)?.description)!, emoji: "s", priority: Priority.high, state: false)
