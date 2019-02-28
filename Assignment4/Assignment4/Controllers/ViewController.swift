@@ -27,9 +27,29 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let todoItem = todoItem {
             descriptionInput.text = todoItem.description
-            priority = todoItem.priority
+            switch todoItem.priority{
+            case "High":
+                prioritySegmentControl.selectedSegmentIndex = 0
+            case "Medium":
+                prioritySegmentControl.selectedSegmentIndex = 1
+            case "Low":
+                prioritySegmentControl.selectedSegmentIndex = 2
+            default:
+                break
+            }
+            
+           
             emojiInput.text = todoItem.emoji
-            state = todoItem.state
+            switch todoItem.state{
+            case "Open":
+                stateSegmentControl.selectedSegmentIndex = 0
+            case "Closed":
+                stateSegmentControl.selectedSegmentIndex = 1
+            default:
+                break
+            }
+           
+            
             
             
         }else {
