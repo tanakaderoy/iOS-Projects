@@ -8,6 +8,11 @@
 
 import Foundation
 import UIKit
+
+extension Notification.Name {
+    static let itemsLoaded = Notification.Name("itemsLoaded")
+}
+
 class TodoItemManager {
     static var instance = TodoItemManager()
     let fileName = "todo.json"
@@ -48,6 +53,8 @@ class TodoItemManager {
         let adapter = TodoFileDataAdapter(fileName: fileName)
         if let todoItems = adapter.loadTask() {
             self.todoItems = todoItems
+            
+            NotificationCenter.default.post(name: .itemsLoaded, object: nil)
             
          
         }

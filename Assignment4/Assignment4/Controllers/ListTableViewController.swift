@@ -12,8 +12,14 @@ class ListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(itemsUpdated(notification:)), name: .itemsLoaded, object: nil)
 
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func itemsUpdated(notification: NSNotification) {
+        tableView.reloadData()
+        
     }
 
 
