@@ -22,16 +22,12 @@ class TodoItemManager {
         return todoItems.count
     }
     
-    private init() {/*
-        let todoTaskOne = TodoItem(description: "Play Fifa", emoji: "emoji", priority: .low, state: .closed)
-        let adapter = TodoFileDataAdapter(fileName: "todoFile.json")
-        adapter.saveTask([todoTaskOne])
-        if let taskTwo = adapter.loadTask() {
-            print("\(taskTwo.description)")
-            
-        }
-        //json file
- */
+    private init() {
+        todoItems.append(TodoItem(description: "Delete Me", emoji: "🚯", priority: .high, state: .open))
+        todoItems.append(TodoItem(description: "Add item", emoji: "➕", priority: .medium, state: .closed))
+        todoItems.append(TodoItem(description: "Edit Me", emoji: "⚽️", priority: .low, state: .open))
+        
+ 
         
         
     }
