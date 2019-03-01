@@ -112,6 +112,7 @@ class ViewController: UIViewController {
             }
             
         }
+        TodoItemManager.instance.save()//added this because if you clicked save button but didnt exit out of app and just stopped the simulator running it wouldnt save
         
         self.navigationController?.popViewController(animated: true)
     }

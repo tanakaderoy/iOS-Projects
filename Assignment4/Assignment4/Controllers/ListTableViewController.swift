@@ -43,6 +43,12 @@ class ListTableViewController: UITableViewController {
             cell.labelEmoji.text = "Emoji: \(todoItem.emoji)"
             cell.labelPriority.text = "Priority: \(todoItem.priority)"
             cell.labelState.text = "Status: \(todoItem.state)"
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yy"
+            let date = Date()
+            let dateString = dateFormatter.string(from: date)
+            
+            cell.labelDueDate.text = "Date added: \(dateString)"
         }else{
             
         }
@@ -52,6 +58,7 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
             TodoItemManager.instance.todoItems.remove(at: indexPath.row)
+            TodoItemManager.instance.save()//added this because if you delete but dont exit the app just stop the simulator from running in xcode it wouldnt save the delete action
         }
         tableView.reloadData()
     }
